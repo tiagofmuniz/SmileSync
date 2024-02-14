@@ -1,6 +1,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Cookies from "js-cookie";
+import {baseUrl} from '../../../baseUrl';
 
 export function RegisterAndLogin() {
   const router = useRouter();
@@ -12,7 +13,7 @@ export function RegisterAndLogin() {
     const { name, email, password } = data;
 
     try {
-      const response = await fetch("https://smilesync-node-mongodb.onrender.com/users", {
+      const response = await fetch(`${baseUrl}/users`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -30,7 +31,7 @@ export function RegisterAndLogin() {
 
           try {
             // Requisição para login
-            const response = await fetch("https://smilesync-node-mongodb.onrender.com/auth/login", {
+            const response = await fetch(`${baseUrl}/auth/login`, {
               method: "POST",
               headers: {
                 Accept: "application/json",
@@ -46,7 +47,7 @@ export function RegisterAndLogin() {
               if (token) {
                 try {
                   // Requisição para rota autenticada
-                  const responseAuth = await fetch("https://smilesync-node-mongodb.onrender.com/auth/rotaAutenticada", {
+                  const responseAuth = await fetch(`${baseUrl}/auth/rotaAutenticada`, {
                     method: "POST",
                     headers: {
                       Accept: "application/json",

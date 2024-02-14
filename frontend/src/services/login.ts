@@ -2,6 +2,7 @@
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import {baseUrl} from '../../../baseUrl';
 
 export function Login() {
   const [message, setMessage] = useState("");
@@ -12,7 +13,7 @@ export function Login() {
 
     try {
       // Requisição para login
-      const response = await fetch("https://smilesync-node-mongodb.onrender.com/auth/login", {
+      const response = await fetch(`${baseUrl}/auth/login`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -22,7 +23,6 @@ export function Login() {
       });
 
       const result = await response.json();
-      console.log(result)
 
       if (response.ok) {
         const token = result.token;
@@ -30,7 +30,7 @@ export function Login() {
         if (token) {
           try {
             // Requisição para rota autenticada
-            const responseAuth = await fetch("https://smilesync-node-mongodb.onrender.com/auth/rotaAutenticada", {
+            const responseAuth = await fetch(`${baseUrl}/auth/rotaAutenticada`, {
               method: "POST",
               headers: {
                 Accept: "application/json",

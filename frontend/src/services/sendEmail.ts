@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
+import {baseUrl} from '../../../baseUrl';
 
 export function useEmailSender() {
   const router = useRouter();
@@ -15,7 +16,7 @@ export function useEmailSender() {
     Cookies.set("resetEmail", email, { expires: 0.5 });
 
     async function getUsers() {
-      const response = await fetch("https://smilesync-node-mongodb.onrender.com/users");
+      const response = await fetch(`${baseUrl}/users`);
       const result = await response.json();
       return result;
     }
@@ -32,7 +33,7 @@ export function useEmailSender() {
       setRecoverCode(confirmationCode);
 
       try {
-        const response = await fetch("https://smilesync-node-mongodb.onrender.com/password/sendEmail", {
+        const response = await fetch(`${baseUrl}/password/sendEmail`, {
           method: "POST",
           headers: {
             Accept: "application/json",

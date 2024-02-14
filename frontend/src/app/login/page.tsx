@@ -6,6 +6,7 @@ import { loginFormData } from '../../hooks/types/loginFormData';
 import { loginSchema } from '../../hooks/schemas/loginSchema';
 import { Login } from '../../services/login';
 import { FormEvent } from 'react';
+import 'dotenv/config';
 
 import { useState } from 'react';
 
@@ -14,6 +15,8 @@ export default function LoginPage() {
     email: '',
     password: '',
   });
+
+
   const { userLogin, message } = Login();
   const [loading, setLoading] = useState(false); // Estado para controlar o status de carregamento
 

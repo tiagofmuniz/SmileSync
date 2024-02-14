@@ -1,6 +1,9 @@
 import { resetFormData } from "@/hooks/types/resetFormData";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import {baseUrl} from '../../../baseUrl';
+console.log(baseUrl)
+
 
 export function UseResetPassword() {
   const [errorMessage, setErrorMessage] = useState("");
@@ -12,7 +15,7 @@ export function UseResetPassword() {
       const { email, confirmPassword } = data;
 
       // Request reset token
-      const requestResetResponse = await fetch("https://smilesync-node-mongodb.onrender.com/password/request-reset", {
+      const requestResetResponse = await fetch(`${baseUrl}/password/request-reset`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -29,7 +32,7 @@ export function UseResetPassword() {
 
       // Reset password using the received token
       const result = await requestResetResponse.json();
-      const resetResponse = await fetch(`https://smilesync-node-mongodb.onrender.com/password/reset/${result.resetToken}`, {
+      const resetResponse = await fetch(`${baseUrl}/password/reset/${result.resetToken}`, {
         method: "POST",
         headers: {
           Accept: "application/json",

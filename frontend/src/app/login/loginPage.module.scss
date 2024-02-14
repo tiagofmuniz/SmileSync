@@ -1,0 +1,19 @@
+.loginPage {
+    // border: 2px solid blue;
+    background-image: url('../../../public/img/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    .content {
+        max-width: 40%;
+    }
+
+
+}

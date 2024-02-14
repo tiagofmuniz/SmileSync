@@ -1,0 +1,81 @@
+$darkgreen: #00312E;
+$rosebackground: #FDC5C6;
+
+.homePage {
+  font-smooth: none;
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url(../../public/img/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 80px;
+  display: flex;
+  // border: 6px solid red;
+
+  .homeContainer {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    min-width: 70%;
+    overflow: hidden;
+    box-shadow: 5px 5px 20px 5px #00000027;
+    text-align: center;
+
+    section.welcome {
+      height: 100%;
+      min-width: 35%;
+      text-align: center;
+      background-color: $darkgreen;
+      color: #FFF;
+      padding: 20px;
+      border-radius: 10px 0 0 10px;
+
+      h1 {
+        font-size: 2em;
+        padding: 60px 0;
+      }
+
+      .slogan {
+        font-weight: 200;
+        margin-bottom: 30px;
+        font-style: italic;
+        color:#FFF;
+      }
+
+      h2 {
+        margin-top: 20px;
+      }
+
+      p {
+        padding: 5px 0 40px 0;
+        font-weight: 200;
+      }
+
+      .btnToEnter {
+        padding: 7px 50px;
+        border-radius: 30px;
+        font-weight: 500;
+        color: #FFF;
+        border: 1px solid #FFF;
+        background-color: $darkgreen;
+        align-self: stretch;
+        justify-self: stretch;
+        cursor: pointer;
+      }
+
+      .forgotPassword {
+        margin: 10px 0;
+        cursor: pointer;
+        font-weight: 200;
+
+        &:hover {
+          transform: scale(1.01);
+        }
+      }
+    }
+    .registerForm{
+      width: 90%;
+      }
+
+  }
+}

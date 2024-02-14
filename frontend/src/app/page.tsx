@@ -49,7 +49,7 @@ export default function HomePage() {
         </section>
         {/* <FormRegister /> */}
         <div className={styles.registerForm}>
-          <h1>Crie sua conta</h1>
+          <h1>Criar conta</h1>
           <form onSubmit={handleFormSubmit} className={styles.formRegisterContainer}>
             {output && <span className="success">{`✔${output} ${message}`}</span>}
             {output && !output && <span className="error">{`🦷 ${output}`}</span>}

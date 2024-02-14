@@ -10,7 +10,7 @@ export default function System() {
   return (
     <main className={styles.pageContainer}>
       <h1>BEM-VINDO A SMILESYNC</h1>
-      <Link href="/" onClick={handleLogout}>
+      <Link href="/" onClick={handleLogout} className={styles.closed}>
         SAIR
       </Link>
     </main>

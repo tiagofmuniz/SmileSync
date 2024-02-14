@@ -1,3 +1,5 @@
+
+
 .loginPage {
     // border: 2px solid blue;
     background-image: url('../../../public/img/bg.jpg');
@@ -16,4 +18,12 @@
     }
 
 
+}
+
+@media (max-width:920px) {
+    .loginPage {
+        .content {
+            max-width: 95%;
+        }
+    }
 }

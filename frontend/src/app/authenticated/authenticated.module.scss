@@ -1,3 +1,5 @@
+$darkgreen: #00312E;
+
 .pageContainer {
     padding: 20px;
     height: 100vh;
@@ -7,4 +9,25 @@
     background-size: cover;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
+    h1 {
+        padding-top: 40px;
+    }
+
+    .closed {
+        margin-top: 40px;
+        color: #FFF;
+        border-radius: 3px;
+        padding: 7px 60px;
+        background-color: $darkgreen;
+        width: fit-content
+    }
+}
+
+@media (max-width:420px) {
+    .pageContainer {
+        padding: 10px;
+
+    }
 }

@@ -25,6 +25,6 @@ app.use('/password', passwordController);
 app.use('/dentist', dentistController);
 
 const port = process.env.PORT || 3001;
-const urlCloudServer = baseUrl || `http://localhost:${port}`;
+const urlCloudServer = `${baseUrl}/${port}` || `http://localhost:${port}`;
 console.log(urlCloudServer)
 app.listen(port, () => console.log(`Servidor rodando em ${urlCloudServer}`));

@@ -2,7 +2,7 @@
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import {baseUrl} from '../../../baseUrl';
+import {baseUrl} from '../contexts/baseUrl';
 
 export function Login() {
   const [message, setMessage] = useState("");

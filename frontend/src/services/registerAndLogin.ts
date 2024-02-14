@@ -1,7 +1,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Cookies from "js-cookie";
-import {baseUrl} from '../../../baseUrl';
+import {baseUrl} from '../contexts/baseUrl';
 
 export function RegisterAndLogin() {
   const router = useRouter();

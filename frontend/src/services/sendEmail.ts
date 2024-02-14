@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
-import {baseUrl} from '../../../baseUrl';
+import {baseUrl} from '../contexts/baseUrl';
 
 export function useEmailSender() {
   const router = useRouter();
